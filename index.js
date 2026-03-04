@@ -1,9 +1,9 @@
 //Server com Http
-import http from "node:http"
+//import http from "node:http"
 import dotenv from "dotenv"
 
 dotenv.config()
-const server = http.createServer( (req, res) => {
+/*const server = http.createServer( (req, res) => {
     if(req.url === "/"){
         res.end("Página Inicial")
     }else{
@@ -12,10 +12,10 @@ const server = http.createServer( (req, res) => {
     }
 })
 
-server.listen(process.env.port)
+server.listen(process.env.port)*/
 
 // Server com Express
-/*import express from "express"
+import express from "express"
 const port = 3333
 const app = express()
 
@@ -24,4 +24,4 @@ app.get('/name', (req,res) =>{
 })
 app.listen(port, () => {
     console.log(`Server running at ${port}`);
-})*/
+})
