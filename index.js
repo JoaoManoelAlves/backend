@@ -22,6 +22,9 @@ const app = express()
 app.get('/name', (req,res) =>{
     res.send("Hello Joao")
 })
+app.post('/products', (req,res) =>{
+    res.send("Products Page")
+})
 app.listen(port, () => {
     console.log(`Server running at ${port}`);
 })
