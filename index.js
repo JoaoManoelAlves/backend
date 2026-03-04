@@ -18,12 +18,22 @@ server.listen(process.env.port)*/
 import express from "express"
 const port = 3333
 const app = express()
+app.use(express.json())
 
-app.get('/name', (req,res) =>{
-    res.send("Hello Joao")
+//Route Params
+app.get('/user/:name', (req,res) =>{
+    const {name} = req.params
+    res.send(`Hello ${name}`)
 })
-app.post('/products', (req,res) =>{
-    res.send("Products Page")
+//Query Params
+app.get('/products', (req,res) =>{
+    const {name, type, color} = req.query
+    res.send(`${name} ${type} ${color}`)
+})
+//Body Params -> Somente usados em POST e PUT
+app.post('/users', (req, res) =>{
+    const {name, age, gender} = req.body
+    console.log("Created user")
 })
 app.listen(port, () => {
     console.log(`Server running at ${port}`);
